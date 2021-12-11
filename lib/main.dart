@@ -28,13 +28,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("IMCalculadora"),
+          title: Text("Calculadora de IMC"),
           centerTitle: true,
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.blue,
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-            padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+            padding: EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
             child: Form(
                 key: _formKey,
                 child: Column(
@@ -43,10 +43,10 @@ class _HomeState extends State<Home> {
                     TextFormField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                      labelText: "Peso (Kg)",
-                      labelStyle: TextStyle(color: Colors.black)),
+                      labelText: "Digite seu peso em kg",
+                      labelStyle: TextStyle(color: Colors.blue)),
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black, fontSize: 25.0),
+                      style: TextStyle(color: Colors.blue, fontSize: 25.0),
                       controller: wgtController,
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -57,10 +57,10 @@ class _HomeState extends State<Home> {
                     TextFormField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                      labelText: "Altura (cm)",
-                      labelStyle: TextStyle(color: Colors.black)),
+                      labelText: "Digite sua altura em cm",
+                      labelStyle: TextStyle(color: Colors.blue)),
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black, fontSize: 25.0),
+                      style: TextStyle(color: Colors.blue, fontSize: 25.0),
                       controller: hgtController,
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -75,18 +75,18 @@ class _HomeState extends State<Home> {
                             child: RaisedButton(
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
-                                  Get.to(ResultPage(wgtController.text, hgtController.text));
+                                  Get.to(ResultPage(wgtController.text, hgtController.text, Colors.blue));
                                 }
                               },
                               child: Text("Calcular",
                               style: TextStyle(
                               color: Colors.white, fontSize: 25.0)),
-                              color: Colors.black,
+                              color: Colors.blue,
                             ))),
                     Text(
                       helper,
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black, fontSize: 25.0),
+                      style: TextStyle(color: Colors.blue, fontSize: 25.0),
                     )
                   ],
                 )
